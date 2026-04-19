@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lkl001 · Drive Agent</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+        .drive-container {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: var(--sp-4);
+            height: calc(100vh - 120px);
+            padding: 0 var(--sp-4);
+        }
+        .chat-area { flex: 1; overflow-y: auto; margin-bottom: var(--sp-3); }
+        /* 适配你原本的卡片内部布局 */
+        .drive-card-body { display: flex; flex-direction: column; height: 100%; }
+    </style>
+</head>
+<body>
+
+<div id="app" class="app-root">
+    <header class="topbar">
+        <div class="topbar__left">
+            <span class="topbar__logo">lkl001</span>
+            <span class="topbar__sep">·</span>
+            <span class="topbar__title">Drive Agent System</span>
+        </div>
+        <nav class="topbar__nav">
+            <a href="../index.html" class="nav-item">Overview</a>
+            <a href="#" class="nav-item nav-item--active">Drive & Agent</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="drive-container">
+
+            <section class="file-explorer">
+                <article class="card" style="height: 100%;">
+                    <header class="card__header">
+                        <h2 class="card__title">Cloud Storage</h2>
+                    </header>
+                    <div class="card__body drive-card-body">
+                        <div id="file-list-container">
+                            <p style="opacity: 0.5;">等待加载文件列表...</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="agent-panel">
+                <article class="card" style="height: 100%; display: flex; flex-direction: column;">
+                    <header class="card__header">
+                        <h2 class="card__title">Storage Agent</h2>
+                        <span class="status-dot status-dot--online"></span>
+                    </header>
+                    <div class="card__body chat-area" id="agent-chat-history">
+                    </div>
+                    <div class="card__footer">
+                        <input type="text" class="notes-textarea" placeholder="发送指令给 Agent..." style="width: 100%;">
+                    </div>
+                </article>
+            </section>
+
+        </div>
+    </main>
+</div>
+
+<script src="drive-app.js" type="module"></script>
+</body>
+</html>
