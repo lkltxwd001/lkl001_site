@@ -2,8 +2,8 @@
     "name": "lkl001_site",
     "dockerFile": "../Dockerfile",
     "workspaceFolder": "/workspace",
-    "mounts": [
-        "source=${localWorkspaceFolder},target=/workspace,type=bind"
+    "runArgs": [
+        "--name", "lkl001_site"
     ],
     "customizations": {
         "vscode": {
