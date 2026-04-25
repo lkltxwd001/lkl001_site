@@ -593,6 +593,8 @@ const NavModule = {
 
     navItems.forEach(item => {
       item.addEventListener('click', e => {
+        const href = item.getAttribute('href');
+        if (href && href !== '#') return;
         e.preventDefault();
         navItems.forEach(n => n.classList.remove('nav-item--active'));
         item.classList.add('nav-item--active');
